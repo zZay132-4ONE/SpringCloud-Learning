@@ -7,7 +7,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 /**
  * @author zzay
  * @className OrderMain80
- * @description Order service启动类
+ * @description Order Service Consumer - 80 (Eureka)
  * @create 2022/04/28 16:24
  */
 @EnableEurekaClient
