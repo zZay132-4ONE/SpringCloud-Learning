@@ -1,0 +1,16 @@
+# server
+server:
+  port: 80
+
+# spring
+spring:
+  # application
+  application:
+    name: cloud-consumer-order
+  # spring cloud
+  cloud:
+    # zookeeper
+    zookeeper:
+      # connection string to the zookeeper cluster
+      connect-string: localhost:2181
+
