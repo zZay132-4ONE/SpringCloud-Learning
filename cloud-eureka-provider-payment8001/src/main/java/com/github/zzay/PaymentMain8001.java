@@ -8,7 +8,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 /**
  * @author zzay
  * @className PaymentMain8001
- * @description Payment Service 8001
+ * @description Payment Service Provider - 8001 (Eureka)
  * @create 2022/04/24 12:36
  */
 @EnableEurekaClient
