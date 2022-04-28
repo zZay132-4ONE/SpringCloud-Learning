@@ -20,6 +20,8 @@
         <module>cloud-eureka-consumer-order80</module>
         <module>cloud-zk-provider-payment8004</module>
         <module>cloud-zk-consumer-order80</module>
+        <module>cloud-consul-provider-payment8006</module>
+        <module>cloud-consul-consumer-order80</module>
     </modules>
 
     <properties>
