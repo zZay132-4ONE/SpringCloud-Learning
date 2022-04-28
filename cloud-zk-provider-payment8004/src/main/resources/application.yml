@@ -1,0 +1,17 @@
+# server
+server:
+  port: 8004
+
+# spring
+spring:
+  # application
+  application:
+    name: cloud-provider-payment
+  # spring cloud
+  cloud:
+    # zookeeper
+    zookeeper:
+      # connection string to the zookeeper cluster
+      connect-string: localhost:2181
+
+
