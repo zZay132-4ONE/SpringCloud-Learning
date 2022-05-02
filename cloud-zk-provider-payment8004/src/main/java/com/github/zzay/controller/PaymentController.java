@@ -14,7 +14,7 @@ import java.util.UUID;
  * @create 2022/04/29 00:30
  */
 @Slf4j
-@RestController(value = "payment")
+@RestController
 public class PaymentController {
 
     /**
@@ -28,7 +28,7 @@ public class PaymentController {
      *
      * @return Info
      */
-    @RequestMapping(value = "zk")
+    @RequestMapping(value = "/payment/zk")
     public String paymentZk() {
         return "springcloud with zookeeper: " + serverPort + "\t" + UUID.randomUUID().toString();
     }
