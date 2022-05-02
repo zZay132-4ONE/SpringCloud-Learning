@@ -21,7 +21,7 @@ import java.util.List;
  */
 @Slf4j
 @RestController
-@RequestMapping(value = "payment")
+@RequestMapping
 public class PaymentController {
 
     // Service ID
@@ -51,7 +51,7 @@ public class PaymentController {
      * @param payment Payment
      * @return Operation result
      */
-    @PostMapping(value = "create")
+    @PostMapping(value = "/payment/create")
     public ResultBean create(Payment payment) {
         int result = paymentService.create(payment);
         log.info("======== Insertion Result: " + result + " ========");
@@ -68,7 +68,7 @@ public class PaymentController {
      * @param id Payment ID
      * @return Payment record with the given ID
      */
-    @GetMapping(value = "get/{id}")
+    @GetMapping(value = "/payment/get/{id}")
     public ResultBean getPaymentById(@PathVariable("id") Long id) {
         Payment payment = paymentService.getPaymentById(id);
         log.info("======== Query Result: " + payment + " ========");
@@ -84,7 +84,7 @@ public class PaymentController {
      *
      * @return DiscoveryClient
      */
-    @GetMapping(value = "/discovery")
+    @GetMapping(value = "/payment/discovery")
     public Object discovery() {
         // print IDs of services
         List<String> services = discoveryClient.getServices();
