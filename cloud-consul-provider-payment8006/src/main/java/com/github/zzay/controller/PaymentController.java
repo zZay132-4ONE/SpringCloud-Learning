@@ -29,7 +29,7 @@ public class PaymentController {
      * @return Info
      */
     @RequestMapping(value = "consul")
-    public String paymentZk() {
+    public String paymentConsul() {
         return "springcloud with consul: " + serverPort + "\t" + UUID.randomUUID().toString();
     }
 
