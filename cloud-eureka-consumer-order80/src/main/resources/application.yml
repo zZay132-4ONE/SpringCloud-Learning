@@ -4,6 +4,7 @@ server:
 
 # spring
 spring:
+  # application
   application:
     name: cloud-order-service
 
@@ -17,4 +18,4 @@ eureka:
     fetch-registry: true
     # url that is responsible for the connection with eureka server about "address query service" and "service registry"
     service-url:
-      defaultZone: http://eureka7001.com:7001/eureka, http://eureka7002.com:7002/eureka
+      defaultZone: http://eureka7001.com:7001/eureka/, http://eureka7002.com:7002/eureka/

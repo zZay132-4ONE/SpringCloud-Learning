@@ -20,7 +20,7 @@ public class ApplicationContextConfig {
      * @return A RestTemplate instance
      */
     @Bean
-    @LoadBalanced
+//    @LoadBalanced
     public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
