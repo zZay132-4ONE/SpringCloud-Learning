@@ -1,0 +1,20 @@
+# server
+server:
+  port: 9527
+
+# spring
+spring:
+  application:
+    name: cloud-zuul-gateway
+
+# eureka
+eureka:
+  # instance
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true
+  # client
+  client:
+    # url that is responsible for the connection with eureka server about "address query service" and "service registry"
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
