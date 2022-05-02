@@ -1,4 +1,4 @@
-package com.github.config;
+package com.github.zzay.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
