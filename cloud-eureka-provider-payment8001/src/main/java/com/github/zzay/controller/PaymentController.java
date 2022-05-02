@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author zzay
@@ -98,21 +99,37 @@ public class PaymentController {
                     + "Instance ID: " + instance.getInstanceId()
                     + "Host: " + instance.getHost() + "\t"
                     + "Port: " + instance.getPort() + "\t"
-                    + "URI: " + instance.getUri()+ "\t"
-                    + "Scheme: " + instance.getScheme()+ "\t"
+                    + "URI: " + instance.getUri() + "\t"
+                    + "Scheme: " + instance.getScheme() + "\t"
                     + "Metadata: " + instance.getMetadata());
         }
         return this.discoveryClient;
     }
 
     /**
-     * Get load balanceer
+     * Get load balancer
+     *
      * @return Server port
      */
-    @GetMapping("/payment/lb")
+    @GetMapping(value = "/payment/lb")
     public String getPaymentLoadBalancer() {
         return serverPort;
     }
 
+    /**
+     * Test for the "timeout control" of OpenFeign
+     *
+     * @return Server port
+     */
+    @GetMapping(value = "/payment/openfeign/timeout")
+    public String paymentFeignTimeOut() {
+        System.out.println("======== paymentFeignTimeOut from port: " + serverPort + " ========");
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return serverPort;
+    }
 
 }
