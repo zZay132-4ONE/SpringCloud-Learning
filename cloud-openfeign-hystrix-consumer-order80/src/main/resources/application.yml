@@ -1,0 +1,33 @@
+# server
+server:
+  port: 80
+
+# spring
+spring:
+  # application
+  application:
+    name: cloud-openfeign-hystrix-consumer-order
+
+# eureka
+eureka:
+  # client
+  client:
+    # indicate that this instance is not registered with eureka server
+    register-with-eureka: false
+    # indicate that this instance fetches registry information from eureka server (default)
+    fetch-registry: true
+    # url that is responsible for the connection with eureka server about "address query service" and "service registry"
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+
+# openFeign
+feign:
+  hystrix:
+    enabled: true
+
+# feign logging
+logging:
+  level:
+    com.github.zzay.service.PaymentOpenFeignService: debug
+
+
