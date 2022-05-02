@@ -22,6 +22,11 @@
         <module>cloud-zk-consumer-order80</module>
         <module>cloud-consul-provider-payment8006</module>
         <module>cloud-consul-consumer-order80</module>
+        <module>cloud-openfeign-consumer-order80</module>
+        <module>cloud-hystrix-provider-payment8001</module>
+        <module>cloud-openfeign-hystrix-consumer-order80</module>
+        <module>cloud-consumer-hystrix-dashboard9001</module>
+        <module>cloud-zuul-gateway9527</module>
     </modules>
 
     <properties>
