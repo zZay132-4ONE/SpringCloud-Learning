@@ -1,0 +1,35 @@
+# server
+server:
+  port: 3344
+
+# spring
+spring:
+  # application
+  application:
+    name: cloud-config-center
+  # cloud
+  cloud:
+    # config
+    config:
+      # server
+      server:
+        git:
+          uri: https://gitee.com/zzay0132/springcloud-config.git
+          search-paths:
+            - springcloud-config
+          default-label: master
+
+# eureka
+eureka:
+  # instance
+  instance:
+    hostname: cloud-config-service
+  # client
+  client:
+    # indicate that this instance is registered with eureka server (default)
+    register-with-eureka: true
+    # indicate that this instance fetches registry information from eureka server (default)
+    fetch-registry: true
+    # url that is responsible for the connection with eureka server about "address query service" and "service registry"
+    service-url:
+      defaultZone: http://localhost:7001/eureka
