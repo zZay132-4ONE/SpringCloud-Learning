@@ -1,0 +1,58 @@
+# server
+server:
+  port: 9527
+
+# spring
+spring:
+  # application
+  application:
+    name: cloud-gateway
+  # cloud
+  cloud:
+    # gateway
+    gateway:
+      # service discovery
+      discovery:
+        # the ability to dynamically create routes from the registry center using micro-service names
+        locator:
+          enabled: true
+      # routes to be mapped
+      routes:
+        # route1 - get
+        - id: payment_route
+          uri: lb://cloud-payment-service
+          predicates:
+            - Path=/payment/get/**
+        # route2 - lb
+        - id: payment_route2
+          uri: lb://cloud-payment-service
+          predicates:
+            - Path=/payment/lb/**
+            - Host=**.zzay.com
+            - Method=GET
+            - Cookie=username,zzay
+            - Header=X-Request-Id, \d+
+            - Query=username, \d+
+#            - After=2022-05-05T15:10:03.685+08:00[Asia/Shanghai]
+#            - Before=2022-05-05T15:10:03.685+08:00[Asia/Shanghai]
+#            - Between=2022-05-05T15:10:03.685+08:00[Asia/Shanghai],2022-05-06T15:10:03.685+08:00[Asia/Shanghai]
+          filters:
+            # filter factory will add a pair in the header of the mapped request, which is "X-Request-Id: 1024"
+            - AddRequestParameter=X-Request-Id,1024
+
+# eureka
+eureka:
+  # instance
+  instance:
+    hostname: cloud-gateway-service
+  # client
+  client:
+    # indicate that this instance is registered with eureka server (default)
+    register-with-eureka: true
+    # indicate that this instance fetches registry information from eureka server (default)
+    fetch-registry: true
+    # url that is responsible for the connection with eureka server about "address query service" and "service registry"
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+
+
